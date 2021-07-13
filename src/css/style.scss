@@ -1,0 +1,24 @@
+@import "import.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+body{
+	font-family: 'Rubik', sans-serif !important;
+}
+
+section {
+	@include margin(1, null, null , null)
+}
+
+.portfolio {
+	background: url('../images/portfolio1.jpg') no-repeat center fixed;
+	background-size: cover;
+	width:100%;
+	height:431px;
+	opacity:0.9;
+}
+
+.entry {
+	width: 75%;
+	text-align: center;
+}

@@ -1,0 +1,9 @@
+@import "variables";
+@import '~foundation-sites/scss/util/util';
+@import '~foundation-sites/scss/settings/settings';
+@import '~foundation-sites/scss/foundation';
+
+
+@include foundation-everything;
+@include foundation-flex-classes;
+@include foundation-flex-grid;
