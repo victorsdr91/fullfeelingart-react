@@ -1,7 +1,7 @@
 import React from 'react';
 import { TitleBar, TitleBarTitle, TopBar, TopBarLeft, TopBarRight, Menu, MenuItem, MenuText } from "react-foundation";
+import { Link } from 'react-router-dom';
 import './style.scss';
-import portfolio from '../../images/portfolio1.png';
 
 class Header extends React.Component {
 	constructor(props) {
@@ -33,8 +33,10 @@ class Header extends React.Component {
 					<TopBarRight>
 						<MenuRender />
 					</TopBarRight>
+					<TopBarRight>
+						<SocialMenu user={this.props.user}/>
+					</TopBarRight>
 				</TopBar>
-				<div className="portfolio"></div>
 			</div>
 		);
 	}
@@ -44,10 +46,9 @@ class MenuRender extends React.Component {
 	constructor(props) {
 		super(props);
 		const menuItems = new Array()
-						.concat({ name: 'Inicio', link: '#', active: true})
+						.concat({ name: 'Inicio', link: '/', active: true})
 						.concat({ name: 'Que hago', link: '#what', active: false })
-						.concat({ name: 'Quien soy', link: '#aboutme', active: false})
-						.concat({ name: 'Facebook', link: '#facebook', active: false});
+						.concat({ name: 'Quien soy', link: '#aboutme', active: false});
 
 		this.state = {
 			menuItems: menuItems,
@@ -66,12 +67,44 @@ class MenuRender extends React.Component {
 		const menuList = this.state.menuItems.map(
 			(element, key) => {
 				return <MenuItem key={key} className={element.active ? 'is-active' : ''}>
-							<a href={element.link} onClick={() => this.setActive(element)}>{element.name}</a>
+							<Link to={element.link} onClick={() => this.setActive(element)}>{element.name}</Link>
 						</MenuItem>;
 			}
 		);
 		return <Menu>
 					{menuList}
+				</Menu>;	
+	}
+}
+
+
+class SocialMenu extends React.Component {
+	constructor(props) {
+		super(props);
+		const menuItems = new Array()
+						.concat({ name: 'facebook', link: '#', icon: 'fi-social-facebook'})
+						.concat({ name: 'instagram', link: 'https://instagram.com/wenlad1', icon: 'fi-social-instagram' })
+						.concat({ name: 'twitter', link: 'https://twitter.com/wendyladino', icon: 'fi-social-twitter'});
+
+		this.state = {
+			menuItems: menuItems,
+		}
+	}
+
+	render() {
+		const menuList = this.state.menuItems.map(
+			(element, key) => {
+				return <MenuItem key={key}>
+							<a href={element.link} target='_blank'><i className={'social ' + element.icon}></i></a>
+						</MenuItem>;
+			}
+		);
+		return <Menu>
+					{menuList}
+					<MenuItem key="admin">
+							<Link to="/admin" user={this.props.user}><i className="social fi-lock"></i></Link>
+					</MenuItem>
+					<MenuText>{this.props.user.nickname}</MenuText>
 				</Menu>;	
 	}
 }

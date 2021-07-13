@@ -1,1 +1,38 @@
 @import '../../css/import';
+
+$topbar-background: $color-darkest;
+$topbar-background-light: $color-lighter;
+.top-bar {
+	background: $topbar-background!important;
+	/*position:fixed;
+	z-index:10;
+	width:100%;*/
+
+	.menu {
+		background:  $topbar-background!important;
+
+		li {
+			a{
+				font-weight: bold;
+				color: $topbar-background-light!important;
+				text-transform: uppercase;
+
+				&:hover{
+					background: $topbar-background-light!important;
+					color: $topbar-background!important;
+				}
+
+				.social {
+					font-size: 24px;
+				}
+			}
+		}
+
+		.is-active {
+			a {
+				background: $topbar-background-light!important;
+				color: $topbar-background!important;
+			}
+		}
+	}
+}

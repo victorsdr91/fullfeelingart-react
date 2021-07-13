@@ -1,35 +1,48 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Header from './components/header/header';
-import AboutMe from './components/aboutme/aboutme';
-import {} from "react-foundation";
-import './css/variables.scss';
+import { BrowserRouter } from 'react-router-dom';
+
 import './css/style.scss';
+import 'foundation-icons/foundation-icons.css';
 
+import Main from './components/Main';
+import Header from './components/header/Header';
 
-class Section extends React.Component {
-	render() {
-		const sectionText = "Esta es la seccion de la pagina de Wendy";
-		return (
-			<section className="row">
-				<AboutMe />
-			</section>
-		);
-	}
-}
+const mockedURL = "http://localhost:3000/";
 
 class App extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			user: {}
+		};
+	}
+
+	componentDidMount() {
+    fetch(mockedURL + 'users/1')
+      .then((response) => {
+        return response.json()
+      })
+      .then((user) => {
+        this.setState({ user: user })
+      })
+  }
+
 	render() {
-		return (
-			<div>
-				<Header logo="Full Feeling Art"/>
-				<Section />
-			</div>
-		);
+		 return(
+		 	<div>
+		 		<Header logo="Full Feeling Art" user={this.state.user}/>
+     		<Main user={this.state.user}/>
+   	  </div>
+		 	);
 	}
 }
 
+
 render(
-  <App />,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('app')
 );

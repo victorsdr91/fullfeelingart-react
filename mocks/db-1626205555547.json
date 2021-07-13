@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nickname": "Wendy",
+      "rights": "Admin",
+      "password": "123456",
+      "email": "wendyladino@fullfeelingart.com"
+    },
+    {
+      "id": "2",
+      "nickname": "Victor",
+      "rights": "User",
+      "password": "123456",
+      "email": "victorsanchez@fullfeelingart.com"
+    }
+  ]
+}

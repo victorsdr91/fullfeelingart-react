@@ -45,7 +45,6 @@ const webpackInitConfig = {
       },
       {
         test: /\.css/,
-        exclude: /node_modules/,
         use: [
           MiniCSSExtract.loader,
           { loader: 'css-loader', options: { sourceMap: true } },
@@ -53,7 +52,6 @@ const webpackInitConfig = {
       },
       {
         test: /\.s[ac]ss$/i,
-        
         use: [
           MiniCSSExtract.loader,
           { loader: 'css-loader', options: { sourceMap: true } },
@@ -76,6 +74,18 @@ const webpackInitConfig = {
           },
         ],
       },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      }
     ],
   },
   plugins: [
