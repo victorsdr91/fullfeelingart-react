@@ -8,7 +8,7 @@ const Main = (props) => {
   return (
     <Switch>
       <Route exact path='/' component={Home}></Route>
-      <Route exact path='/admin' render={ props => (<Admin {...props} />)}></Route>
+      <Route exact path='/admin' render={ () => (<Admin {...props} />)}></Route>
     </Switch>
   );
 }

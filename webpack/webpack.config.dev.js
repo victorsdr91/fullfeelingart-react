@@ -18,6 +18,7 @@ const webpackInitConfig = {
     hot: true,
     port: 9000,
     host: '0.0.0.0',
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.js', '.ts'],

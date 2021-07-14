@@ -1,13 +1,11 @@
 import React from 'react';
 
-class Admin extends React.Component {
-	render() {
-		return (
-			<div>
-				{this.props.user.rights == "Admin" ? 'Admin panel' : 'does not have rights' }
-			</div>
-		);
-	}
+const Admin = (props) => {
+	return (
+		<React.Fragment>
+			{props.user.rights == "Admin" ? 'Admin panel' : 'does not have rights' }
+		</React.Fragment>
+	);
 }
 
 export default Admin;

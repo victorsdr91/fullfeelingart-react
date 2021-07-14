@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {render} from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -10,34 +10,21 @@ import Header from './components/header/Header';
 
 const mockedURL = "http://localhost:3000/";
 
-class App extends React.Component {
+const App = (props) => {
+	const [user, setUser] = useState({ user: {} });
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			user: {}
-		};
-	}
+	useEffect(async () => {
+		const response = await fetch(mockedURL + 'users/1');
+		setUser(await response.json());
+	}, []);
 
-	componentDidMount() {
-    fetch(mockedURL + 'users/1')
-      .then((response) => {
-        return response.json()
-      })
-      .then((user) => {
-        this.setState({ user: user })
-      })
-  }
-
-	render() {
-		 return(
-		 	<div>
-		 		<Header logo="Full Feeling Art" user={this.state.user}/>
-     		<Main user={this.state.user}/>
-   	  </div>
-		 	);
-	}
-}
+	return (
+					 	<React.Fragment>
+					 		<Header logo="Full Feeling Art" user={user}/>
+					 		<Main user={user}/>
+						</React.Fragment>
+					);
+};
 
 
 render(
