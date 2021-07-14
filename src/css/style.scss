@@ -6,21 +6,32 @@ body{
 }
 
 section {
-	@include margin(1, null, null , null)
+	@include margin(2, null, 2, null);
 }
 
 .portfolio {
-	background: url('../images/portfolio1.jpg') no-repeat center;
+	@include margin(2, null, null, null);
+	background: url('../assets/images/portfolio1.jpg') no-repeat center;
 	background-size: cover;
 	width:100%;
 	height:431px;
-	opacity:0.9;
 }
 
 .entry {
 	width: 75%;
 	text-align: center;
 	color: $color-darkest;
+}
+.portrait-wrapper {
+	@include padding(2, null, 2, null);
+	background: $color-lighter;
+
+	.portrait {
+		overflow: hidden;
+		color: $color-darkest;
+		text-align: justify;
+	}
+
 }
 
 h1,h2,h3,h4,h5,h6 {

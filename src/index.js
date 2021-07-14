@@ -2,20 +2,19 @@ import React, { useState, useEffect } from 'react';
 import {render} from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
+
 import './css/style.scss';
 import 'foundation-icons/foundation-icons.css';
 
 import Main from './components/Main';
 import Header from './components/header/Header';
-
-const mockedURL = "http://localhost:3000/";
+import UserService from './services/UserService';
 
 const App = (props) => {
-	const [user, setUser] = useState({ user: {} });
+	const [user, setUser] = useState({});
 
 	useEffect(async () => {
-		const response = await fetch(mockedURL + 'users/1');
-		setUser(await response.json());
+		setUser(await UserService.getUserByNickname('Victor'));
 	}, []);
 
 	return (

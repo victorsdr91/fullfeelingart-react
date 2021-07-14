@@ -9,7 +9,7 @@ const AboutMe = (props) => {
 	return (
 		<div className="column entry">
 			<h3>{text.title}</h3>
-			<p>{text.description}</p>
+			<strong>{text.description}</strong>
 		</div>
 	);
 }

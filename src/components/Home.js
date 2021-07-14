@@ -1,14 +1,29 @@
 import React from 'react';
 import AboutMe from './Aboutme';
+import { Row, Column } from 'react-foundation';
+
+import portrait from '../assets/images/portrait.jpeg';
 
 const Home = (props) => {
+	const texts = { title: "Lorem impsum",
+					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}
 	return (
-			<React.Fragment>
+			<>
 				<div className="portfolio"></div>
 				<section className="row">
 					<AboutMe />
 				</section>
-			</React.Fragment>
+				<section className="portrait-wrapper">
+					<Row className="medium-unstack portrait align-middle">
+						<Column><img src={portrait} className="portrait-image" /></Column>
+						<Column className="font-italic">
+							<h4><strong>{texts.title}</strong></h4>
+							<p>{texts.description}</p>
+						</Column>
+						
+					</Row>
+				</section>
+			</>
 		);
 };
 

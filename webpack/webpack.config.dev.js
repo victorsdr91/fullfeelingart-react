@@ -64,12 +64,12 @@ const webpackInitConfig = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|jpeg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              // outputPath: 'images/',
+              outputPath: 'assets/images/',
               // publicPath: 'images/',
             },
           },
@@ -82,7 +82,7 @@ const webpackInitConfig = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/'
+              outputPath: 'assets/fonts/'
             }
           }
         ]
