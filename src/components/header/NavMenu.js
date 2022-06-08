@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Menu, MenuItem, MenuText } from "react-foundation";
+import { Menu, MenuItem } from "react-foundation";
 
 import { NavLink } from 'react-router-dom';
 
@@ -8,7 +8,8 @@ const NavMenu = (props) => {
  	const menuItemsObj = new Array()
 						.concat({ name: 'Inicio', link: '/', active: true})
 						.concat({ name: 'Que hago', link: '#what', active: false })
-						.concat({ name: 'Quien soy', link: '#aboutme', active: false});
+						.concat({ name: 'Quien soy', link: '#aboutme', active: false})
+						.concat({ name: 'Psicologia', link: '#psicologia', active: false});
 
 
  	const [menuItems, setMenuItems] = useState(menuItemsObj);

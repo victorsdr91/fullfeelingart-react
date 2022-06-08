@@ -33,7 +33,7 @@ const webpackInitConfig = {
       {
         test: /\.ts/,
         exclude: /node_modules/,
-        use: ['ts-loader'],
+        use: ['awesome-typescript-loader'],
       },
       {
         test: /\.css/,

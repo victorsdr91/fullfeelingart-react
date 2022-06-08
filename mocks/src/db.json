@@ -1,18 +1,29 @@
 {
-	"users": [
-		{
-			"id": "1",
-			"nickname": "Wendy",
-			"rights": "Admin",
-			"password": "1234567",
-			"email": "wendyladino@fullfeelingart.com"
-		},
-		{
-			"id": "2",
-			"nickname": "Victor",
-			"rights": "User",
-			"password": "123456",
-			"email": "victorsanchez@fullfeelingart.com"
-		}
-	]
+  "users": [
+    {
+      "id": "1",
+      "nickname": "Wendy",
+      "rights": "Admin",
+      "password": "1234567",
+      "email": "wendyladino@fullfeelingart.com"
+    },
+    {
+      "id": "2",
+      "nickname": "Victor",
+      "rights": "User",
+      "password": "123456",
+      "email": "victorsanchez@fullfeelingart.com"
+    }
+  ],
+  "components": [
+    {
+      "widgetName": "aboutme",
+      "enabled": true,
+      "info": {
+        "title": "Wendy Ladino",
+        "description": "<p>Esto es una prueba <strong>con formato</strong></p>"
+      },
+      "id": "1"
+    }
+  ]
 }

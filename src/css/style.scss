@@ -7,15 +7,33 @@ body{
 
 section {
 	@include margin(2, null, 2, null);
-}
 
+}
+.post-header {
+	@include margin(3.4, null, null, null);
+}
 .portfolio {
-	@include margin(2, null, null, null);
 	background: url('../assets/images/portfolio1.jpg') no-repeat center;
 	background-size: cover;
 	width:100%;
 	height:431px;
 }
+
+.margin-top{
+	&-2{
+		@include margin(2, null, null, null);
+	}
+	&-3{
+		@include margin(3, null, null, null);
+	}
+	&-4{
+		@include margin(4, null, null, null);
+	}
+	&-5{
+		@include margin(5, null, null, null);
+	}
+}
+
 
 .entry {
 	width: 75%;
@@ -34,6 +52,52 @@ section {
 
 }
 
+textarea {
+	width: 100%;
+	@include padding(1, 1, 1, 1);
+	box-sizing: border-box;
+	resize: none;
+
+	&.editable-about-me-textarea {
+		height: 200px;
+	}
+}
+
+.positive-msg {
+	color: green;
+	font-size: 0.9rem;
+	transition: display 2s;
+}
+
+
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Karla', sans-serif;
+}
+
+.admin-menu-wrapper {
+	@include padding(2, null, null, null);
+	background-color: rgb(31, 31, 31);
+	a {
+		color: $color-lighter;
+
+		&:hover{
+			color: $color-lighter;
+			border: 1px solid rgb(35, 35, 35);
+			background: rgb(25, 25, 25)!important;
+		}
+	}
+	.card-icon {
+		font-size: 24px;
+	}
+
+	.is-active {
+		a {
+			border: 1px solid rgb(35, 35, 35);
+			background: rgb(25, 25, 25)!important;
+		}
+	}
+}
+
+.ck-editor__main {
+	margin-bottom: 10px;
 }

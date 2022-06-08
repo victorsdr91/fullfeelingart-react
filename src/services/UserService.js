@@ -1,16 +1,17 @@
-import http from './Api.config';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-const getUser = async (userId) => {
-	const response = await http.get('users/' + userId);
-	return response.data;
-};
+// Define a service using a base URL and expected endpoints
+export const userApi = createApi({
+	reducerPath: 'userApi',
+	baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
+	endpoints: (builder) => ({
+		getUser: builder.query({
+			query: (id) => `users/${id}`,
+		}),
+		getUserByNickname: builder.query({
+			query: (nickname) => `users/?nickname=${nickname}`,
+		}),
+	}),
+})
 
-const getUserByNickname = async (nickname) => {
-	const response = await http.get('users/?nickname=' + nickname);
-	return response.data[0];
-};
-
-export default {
-	getUser,
-	getUserByNickname,
-};
+export const { useGetUserQuery, useGetUserByNicknameQuery } = userApi;

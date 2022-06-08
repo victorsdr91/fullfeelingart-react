@@ -1,7 +1,7 @@
 @import '../../css/import';
 
-$topbar-background: $color-darkest;
-$topbar-background-light: $color-lighter;
+$topbar-background: $color-lighter;
+$topbar-background-light: $color-darkest;
 .menu-wrapper {
 	position:fixed;
 	z-index:10;

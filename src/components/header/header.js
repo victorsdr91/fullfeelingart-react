@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TitleBar, TitleBarTitle, TopBar, TopBarLeft, TopBarRight, Menu, MenuItem, MenuText } from "react-foundation";
+import { TitleBar, TitleBarTitle, TopBar, TopBarLeft, TopBarRight, Menu, MenuText } from "react-foundation";
 import NavMenu from './NavMenu';
 import SocialMenu from './SocialMenu';
 import './style.scss';
@@ -30,7 +30,7 @@ const Header = (props) => {
 					<NavMenu />
 				</TopBarRight>
 				<TopBarRight>
-					<SocialMenu user={props.user}/>
+					<SocialMenu/>
 				</TopBarRight>
 			</TopBar>
 		</div>
