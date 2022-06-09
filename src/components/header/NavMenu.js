@@ -7,25 +7,18 @@ const NavMenu = (props) => {
 
  	const menuItemsObj = new Array()
 						.concat({ name: 'Inicio', link: '/', active: true})
-						.concat({ name: 'Que hago', link: '#what', active: false })
-						.concat({ name: 'Quien soy', link: '#aboutme', active: false})
-						.concat({ name: 'Psicologia', link: '#psicologia', active: false});
+						.concat({ name: 'Que hago', link: 'what', active: false })
+						.concat({ name: 'Quien soy', link: 'who', active: false})
+						.concat({ name: 'Psicologia', link: 'psico', active: false});
 
 
  	const [menuItems, setMenuItems] = useState(menuItemsObj);
 
-	function setActive(element) {
-		const items = menuItems.slice();
-		items.map((el) => {
-			el.active = el.name == element.name;
-		});
-		setMenuItems(items);
-	}
 
 	const menuList = menuItems.map(
 		(element, key) => {
-			return <MenuItem key={key} className={element.active ? 'is-active' : ''}>
-						<NavLink to={element.link} onClick={() => setActive(element)}>{element.name}</NavLink>
+			return <MenuItem key={key} >
+						<NavLink exact to={element.link}>{element.name}</NavLink>
 					</MenuItem>;
 		}
 	);

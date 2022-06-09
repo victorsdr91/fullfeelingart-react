@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { host } from './Api.config';
 
 // Define a service using a base URL and expected endpoints
 export const componentApi = createApi({
     reducerPath: 'componentApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: host }),
     tagTypes: ['Components'],
     endpoints: (builder) => ({
         getContent: builder.query({

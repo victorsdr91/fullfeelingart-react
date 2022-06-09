@@ -1,7 +1,7 @@
 import React from 'react';
 import { Callout } from 'react-foundation';
 import { Switch, Route } from 'react-router-dom';
-import EditableAboutMe from "./EditableAboutMe";
+import { EditableHome } from './EditableHome';
 
 const Main = (props) => {
     return (
@@ -10,7 +10,7 @@ const Main = (props) => {
                 <Route exact path='/show-articles' render={() => 'work in progress'}></Route>
                 <Route exact path='/settings' render={() => 'work in progress'}></Route>
                 <Route exact path='/edit-contact' render={() => 'work in progress'}></Route>
-                <Route exact path='/edit-about-me' component={EditableAboutMe}></Route>
+                <Route exact path='/edit-home' component={EditableHome}></Route>
             </Switch>
         </Callout>
     );

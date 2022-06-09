@@ -31,13 +31,10 @@ import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
-import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
 import Mention from '@ckeditor/ckeditor5-mention/src/mention.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat.js';
-import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters.js';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextPartLanguage from '@ckeditor/ckeditor5-language/src/textpartlanguage.js';
@@ -75,13 +72,10 @@ Editor.builtinPlugins = [
 	Link,
 	LinkImage,
 	List,
-	MediaEmbed,
-	MediaEmbedToolbar,
 	Mention,
 	Paragraph,
 	PasteFromOffice,
 	RemoveFormat,
-	SpecialCharacters,
 	Table,
 	TableToolbar,
 	TextPartLanguage,
@@ -103,7 +97,6 @@ Editor.defaultConfig = {
 			'bulletedList',
 			'numberedList',
 			'removeFormat',
-			'specialCharacters',
 			'|',
 			'outdent',
 			'indent',
@@ -112,7 +105,6 @@ Editor.defaultConfig = {
 			'imageInsert',
 			'blockQuote',
 			'insertTable',
-			'mediaEmbed',
 			'codeBlock',
 			'undo',
 			'redo'

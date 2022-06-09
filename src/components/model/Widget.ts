@@ -7,7 +7,7 @@ export class Widget {
         description: string
     };
 
-    constructor(id, widgetName, {title, description}) {
+    constructor(id: number, widgetName: string, title:string, description:string) {
         this.id = id;
         this.widgetName = widgetName;
         this.info = {

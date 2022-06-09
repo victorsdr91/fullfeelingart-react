@@ -6,9 +6,9 @@ const Panel = () => {
 
     const panelItems = [
         {
-            name: 'About Me',
+            name: 'Home',
             icon: 'page',
-            link: 'edit-about-me',
+            link: 'edit-home',
             active: false,
         },
         {
@@ -32,19 +32,11 @@ const Panel = () => {
 
     const [menuItems, setMenuItems] = useState(panelItems);
 
-	function setActive(element) {
-		const items = menuItems.slice();
-		items.map((el) => {
-			el.active = el.name == element.name;
-		});
-		setMenuItems(items);
-	}
-
     return (
         <Menu isVertical={true}>
         { menuItems.map((item, key) => (
-            <MenuItem className={item.active ? 'is-active' : ''} key={key} >
-                    <NavLink to={`${item.link}`} onClick={() => setActive(item)}>
+            <MenuItem key={key} >
+                    <NavLink exact to={item.link}>
                         <div className="text-center">
                                 <i className={"card-icon fi-"+ item.icon}></i>
                                 <p><strong>{item.name}</strong></p>

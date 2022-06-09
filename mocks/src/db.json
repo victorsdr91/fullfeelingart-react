@@ -21,9 +21,18 @@
       "enabled": true,
       "info": {
         "title": "Wendy Ladino",
-        "description": "<p>Esto es una prueba <strong>con formato</strong></p>"
+        "description": "<p><i>Psicóloga, Psicoterapeuta Artística, Asesora integral orientación laboral.</i></p>"
       },
       "id": "1"
+    },
+    {
+      "widgetName": "summary",
+      "enabled": true,
+      "info": {
+        "title": "Acerca de mi",
+        "description": "<p><strong>Psicóloga Integral, con una trayectoria formativa y profesional multifacética</strong> con mas de 3 años de experiencia, a lo largo de mi carrera profesional he tenido la oportunidad de trabajar en ámbitos organizacionales, educativos, sociales y clínicos.<br><br><strong>Líder en asesoramiento y creación de procesos de desarrollo</strong> mediante la identificación de los factores psicosociales que influyen en un entorno, diseño de actividades formativas, planteamiento de objetivos que permitan reconstruir el tejido social de una comunidad, contribuyendo así a la generación de valor mediante la gestión y el desarrollo del talento humano.</p>"
+      },
+      "id": "2"
     }
   ]
 }

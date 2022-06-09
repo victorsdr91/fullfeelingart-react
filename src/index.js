@@ -14,6 +14,7 @@ import 'foundation-icons/foundation-icons.css';
 
 import Main from './components/Main';
 import Header from './components/header/Header';
+import { Footer } from './components/Footer';
 
 const App = () => {
 	const { data } = useGetUserByNicknameQuery('Wendy');
@@ -24,10 +25,11 @@ const App = () => {
 
 	return (
 			data ? (
-			<>
+			<div className='holder'>
 				<Header logo="Full Feeling Art"/>
 				<Main />
-			</>
+				<Footer />
+			</div>
 			) : null
 	);
 };

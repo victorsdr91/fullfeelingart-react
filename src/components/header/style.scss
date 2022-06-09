@@ -14,6 +14,11 @@ $topbar-background-light: $color-darkest;
 	.menu {
 		background:  $topbar-background!important;
 
+		.menu-text {
+			font-family: 'Dancing Script', cursive;
+			font-size: 1.2rem;
+		}
+
 		li {
 			a{
 				font-weight: bold;
@@ -24,18 +29,12 @@ $topbar-background-light: $color-darkest;
 					background: $topbar-background-light!important;
 					color: $topbar-background!important;
 				}
-
-				.social {
-					font-size: 24x;
-				}
 			}
 		}
 
-		.is-active {
-			a {
-				background: $topbar-background-light!important;
-				color: $topbar-background!important;
-			}
+		a.active {
+			background: $topbar-background-light!important;
+			color: $topbar-background!important;
 		}
 	}
 }
